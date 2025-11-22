@@ -31,5 +31,32 @@ INSERT INTO layoffs_staging
 SELECT * 
 FROM layoffs;
 ```
+### 2. Detect and Remove Duplicates
+
+Duplicates are detected using ROW_NUMBER():
+
+```
+ROW_NUMBER() OVER (
+  PARTITION BY company, location, industry, total_laid_off,
+               percentage_laid_off, date, stage, country,
+               funds_raised_millions
+)
+```
+Records with row_num > 1 are deleted, leaving only unique values.
+
+### 3. Standardize Text Fields
+#### Remove leading/trailing whitespace
+
+```
+UPDATE layoffs_staging2
+SET company = TRIM(company);
+```
+#### Unify industry categorization
+
+```
+UPDATE layoffs_staging2
+SET industry = 'Crypto'
+WHERE industry LIKE 'Crypto%';
+```
 
 
