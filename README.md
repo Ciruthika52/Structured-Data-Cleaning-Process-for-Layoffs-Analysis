@@ -23,4 +23,13 @@ SQL Concepts:	Window Functions, Joins, Data Standardization
 ### 1. Create a Staging Table
 To protect original data, a staging table is created and populated with all source records:
 
+```sql
+CREATE TABLE layoffs_staging
+LIKE layoffs;
+
+INSERT INTO layoffs_staging
+SELECT * 
+FROM layoffs;
+```
+
 
