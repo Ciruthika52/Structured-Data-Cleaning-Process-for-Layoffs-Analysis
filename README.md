@@ -19,4 +19,8 @@ The result is a curated database table suitable for dashboards, reports, and adv
 Database:MySQL  
 SQL Concepts:	Window Functions, Joins, Data Standardization
 
+## Data Cleaning Pipeline
+### 1. Create a Staging Table
+To protect original data, a staging table is created and populated with all source records:
+
 
