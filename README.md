@@ -13,3 +13,10 @@ Key problems addressed:
 5.Unnecessary temporary columns  
 
 The result is a curated database table suitable for dashboards, reports, and advanced analysis.
+
+## Tools & Technology
+
+Database:MySQL  
+SQL Concepts:	Window Functions, Joins, Data Standardization
+
+
