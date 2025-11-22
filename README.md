@@ -35,7 +35,7 @@ FROM layoffs;
 
 Duplicates are detected using ROW_NUMBER():
 
-```
+```sql
 ROW_NUMBER() OVER (
   PARTITION BY company, location, industry, total_laid_off,
                percentage_laid_off, date, stage, country,
@@ -47,7 +47,7 @@ Records with row_num > 1 are deleted, leaving only unique values.
 ### 3. Standardize Text Fields
 #### Remove leading/trailing whitespace
 
-```
+```sql
 UPDATE layoffs_staging2
 SET company = TRIM(company);
 ```
